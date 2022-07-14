@@ -1,6 +1,7 @@
 import restrictedQuery
 import credentialsQuery
 import manager
+import permisoMedio
 
 print("Ingrese el id cliente: ")
 idCliente = input()
@@ -14,6 +15,6 @@ tipoUsuario = credentialsQuery.searchUser(usuarioAsesor, contrasenia)
 if tipoUsuario =="Restringido":
    restrictedQuery.searchClient(idCliente)
 elif tipoUsuario =="Validador":
-    '''Llamar funcion'''
+    permisoMedio.permisoIntermedio(idCliente)
 elif tipoUsuario =="Manager":
     manager.managerQuery(idCliente)
