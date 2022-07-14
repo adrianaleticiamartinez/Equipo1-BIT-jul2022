@@ -1,5 +1,6 @@
 import restrictedQuery
 import credentialsQuery
+import manager
 
 print("Ingrese el id cliente: ")
 idCliente = input()
@@ -9,13 +10,10 @@ print("Ingrese contraseña: ")
 contrasenia = input()
 
 
-
-credentialsQuery.searchUser(usuarioAsesor, contrasenia)
-
-tipoUsuario = "algo"
-if credentialsQuery.searchUser(usuarioAsesor, contrasenia) =="restringido":
+tipoUsuario = credentialsQuery.searchUser(usuarioAsesor, contrasenia)
+if tipoUsuario =="Restringido":
    restrictedQuery.searchClient(idCliente)
-elif tipoUsuario =="validador":
+elif tipoUsuario =="Validador":
     '''Llamar funcion'''
 elif tipoUsuario =="Manager":
-    '''Llamar funcion'''
+    manager.managerQuery(idCliente)
